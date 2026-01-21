@@ -1,8 +1,8 @@
 const texts = [
-  "Tudo começou com um simples olhar…",
+  "Tudo começou com uma simples mensagem…",
   "Depois vieram as conversas que duravam horas.",
   "As risadas, os abraços, os silêncios confortáveis.",
-  "Os dias difíceis — e mesmo assim, era você.",
+  "Os dias difíceis e mesmo assim, era você.",
   "Cada dia ao seu lado virou escolha.",
   "E agora… tem algo que preciso te mostrar."
 ];
