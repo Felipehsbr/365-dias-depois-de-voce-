@@ -1,27 +1,34 @@
 const texts = [
-  "Tudo começou com uma simples mensagem…",
-  "Depois vieram as conversas que duravam horas.",
-  "As risadas, os abraços, os silêncios confortáveis.",
-  "Os dias difíceis e mesmo assim, era você.",
-  "Cada dia ao seu lado virou escolha.",
-  "E agora… tem algo que preciso te mostrar."
+  "Tudo começou com um simples olhar… mas naquele momento eu ainda não fazia ideia de que ali estava começando a melhor parte da minha vida.",
+
+  "Vieram as conversas que atravessavam a madrugada, os risos sem motivo, as mensagens que faziam o coração bater mais rápido só de aparecer na tela.",
+
+  "Com você, os dias comuns ganharam cor, e até o silêncio se tornou confortável. Era como se o mundo desacelerasse só para nos ouvir.",
+
+  "Nem tudo foi fácil. Houve dias difíceis, inseguranças, medos… mas mesmo assim, em todos eles, era você que eu escolhia.",
+
+  "Cada abraço virou abrigo. Cada palavra, um cuidado. Cada momento, uma certeza crescendo aos poucos dentro de mim.",
+
+  "E hoje, depois de 365 dias, eu entendo: não foi sorte. Foi destino construído. Foi amor escolhido.",
 ];
 
 let step = 0;
 const textEl = document.getElementById("text");
 const btn = document.getElementById("nextBtn");
 
-/* Criar corações automaticamente */
+/* Criar corações */
 function createHeart() {
   const heart = document.createElement("span");
-  heart.innerText = ["💖", "💗", "💘", "💞"][Math.floor(Math.random() * 4)];
+  heart.innerText = ["💖", "💗", "💘", "💞", "💓"][Math.floor(Math.random() * 5)];
   heart.style.left = Math.random() * 100 + "vw";
-  heart.style.animationDuration = 4 + Math.random() * 4 + "s";
-  document.getElementById("hearts").appendChild(heart);
+  heart.style.fontSize = 16 + Math.random() * 20 + "px";
+  heart.style.animationDuration = 4 + Math.random() * 5 + "s";
 
-  setTimeout(() => heart.remove(), 8000);
+  document.getElementById("hearts").appendChild(heart);
+  setTimeout(() => heart.remove(), 9000);
 }
-setInterval(createHeart, 300);
+
+setInterval(createHeart, 280);
 
 /* Avançar história */
 btn.onclick = () => {
@@ -34,10 +41,10 @@ btn.onclick = () => {
   }
 };
 
-/* Carta misteriosa */
+/* Mostrar carta */
 function showLetter() {
   document.getElementById("game").innerHTML = `
-    <p>Clique na carta…</p>
+    <p>Existe uma carta que eu escrevi pensando em nós…</p>
     <div class="letter" onclick="openLetter()">💌</div>
   `;
 }
@@ -51,17 +58,18 @@ function openLetter() {
       <div id="proposal">
         <h1>💍</h1>
         <p>
-          Depois de tudo isso…<br><br>
-          Quer passar o resto da vida comigo?
+          Depois de tudo que vivemos,<br>
+          de tudo que construímos,<br><br>
+          você aceita passar o resto da vida comigo?
         </p>
       </div>
     `;
-  }, 1200);
+  }, 1400);
 }
 
 /* Explosão de corações */
 function explodeHearts() {
-  for (let i = 0; i < 40; i++) {
-    setTimeout(createHeart, i * 30);
+  for (let i = 0; i < 50; i++) {
+    setTimeout(createHeart, i * 25);
   }
 }
